@@ -218,6 +218,7 @@ ul {
   font-size: 16px;
   line-height: 1.9;
   transition: background-color 250ms var(--time-function);
+  cursor: pointer;
 }
 .hero .button:hover,
 .hero .button:focus,
@@ -225,6 +226,7 @@ ul {
   background-color: var(--accent-button);
 }
 
+/* MODAL */
 .backdrop {
   position: fixed;
   top: 0;
@@ -280,6 +282,7 @@ ul {
 .modal-icon {
   font: var(--bg-secondary-color);
 }
+
 
 /*----- SECTION FEATURES----- */
 .section-features {
@@ -436,7 +439,6 @@ ul {
 .icon-team-link:focus {
   fill: var(--white-text-bg);
   background-color: var(--accent-color);
-
 }
 /*-----SECTION CLIENT----- */
 .client-title {
@@ -476,7 +478,6 @@ ul {
 .client-item-link:focus {
   border: 1px solid var(--accent-color);
   fill: var(--accent-color);
-
 }
 
 /*------sechion-portfolio------*/
@@ -518,7 +519,6 @@ ul {
   background-color: var(--accent-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-
 }
 .filter-btn.all {
   padding-left: 25px;
@@ -603,7 +603,6 @@ ul {
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-
 }
 /*----- FOOTER----- */
 .footer {
@@ -643,7 +642,6 @@ ul {
 .footer-address .link:hover,
 .footer-adress .link:focus {
   color: var(--accent-color);
-
 }
 
 .text-footer {
@@ -696,4 +694,69 @@ ul {
 
 .footer-contact-container {
   flex-basis: 231px;
+}
+.subscribe {
+}
+.container {
+}
+.subscribe-text {
+  color: var(--white-text-bg);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.input-subscribe {
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--bg-color-hero-footer);
+  color: var(--bg-secondary-color);
+}
+.subscribe-btn {
+  display: flex;
+  padding: 0;
+  width: 200px;
+  height: 50px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  justify-content: center;
+
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+
+  color: var(--white-text-bg);
+  background-color: var(--accent-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background-color 250ms var(--time-function);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus,
+.subscribe-btn:active {
+  background-color: var(--accent-button);
+}
+
+.icon-subscribe {
+  width: 24px;
+  height: 24px;
+  fill: var(--white-text-bg);
+  margin-left: 10px;
 }
