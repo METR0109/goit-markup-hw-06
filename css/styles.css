@@ -39,7 +39,8 @@ ul {
   text-decoration: none;
 }
 
-.hidden-title {
+.hidden-title,
+.visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -284,7 +285,8 @@ ul {
   /* cursor: pointer; */
   transition: fill 250ms var(--time-function);
 }
-.modal-icon:focus, .modal-icon:hover {
+.modal-icon:focus,
+.modal-icon:hover {
   fill: var(--accent-color);
 }
 .modal-label {
@@ -296,7 +298,7 @@ ul {
   font-size: 20px;
   line-height: calc(23 / 20);
   text-align: center;
-  letter-spacing: 0.03em;
+  user-select: none;
 
   color: var(--secondary-text-color);
 }
@@ -306,7 +308,6 @@ ul {
 }
 .modal-form-group {
   margin-bottom: 20px;
-
 }
 .modal-form-label {
   font-size: 12px;
@@ -314,7 +315,12 @@ ul {
   letter-spacing: 0.01em;
   color: var(--primery-text-color);
   margin-bottom: 4px;
+  user-select: none;
 }
+/* .modal-form-label::placeholder {
+  color: #000000;
+} */
+
 .modal-form-wrapper {
   position: relative;
   margin-bottom: 10px;
@@ -352,15 +358,23 @@ ul {
   padding: 14px 16px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
-
+  cursor: pointer;
   color: rgba(117, 117, 117, 0.5);
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: outline 250ms var(--time-function);
 }
+.modal-form-message::placeholder {
+  opacity: 0;
+  font-size: 14px;
+  color: #9da4bd;
+  transition: opacity var(--time-function);
+}
 .modal-form-message:focus {
   outline: 1px solid var(--accent-color);
+  opacity: 1;
+  transition-delay: 200ms;
 }
 .modal-form-agreement {
   display: flex;
@@ -370,27 +384,58 @@ ul {
   gap: 7px;
 }
 .modal-form-checkbox {
+}
+.modal-form-checkbox:checked + .modal-form-agreement-icon .uncheck {
+  opacity: 0;
+}
+.modal-form-checkbox:checked + .modal-form-agreement-icon .check {
+  opacity: 1;
+}
+.modal-form-agreement-icon {
+}
+.uncheck {
+  opacity: 1;
+  transition: opacity 250ms var(--time-function);
+}
+.check {
+  opacity: 0;
+  transition: opacity 250ms var(--time-function);
+}
+/* .modal-form-checkbox {
   appearance: none;
   width: 16px;
-height: 15px;
-outline: 2px solid transparent;
-outline-offset: -2px;
-border: 2px solid var(--secondary-text-color);
-border-radius: 2px;
-cursor: pointer;
+  height: 15px;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  border: 2px solid var(--secondary-text-color);
+  border-radius: 2px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0;
+  transition: background-size 250ms var(--time-function),
+    background-color 250ms var(--time-function), outline-color 250ms var(--time-function);
 }
 .modal-form-checkbox:checked {
   outline-color: var(--accent-color);
-}
-.modal-form-agreement-desc{
+  background-color: var(--accent-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+  background-size: 11px 8px;
+} */
 
+.modal-form-agreement-desc {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  user-select: none;
 }
 .modal-form-agreement-link {
-color: var(--accent-color);
+  color: var(--accent-color);
+  /* text-underline-position: unset; */
+  text-underline-offset: 2px;
 }
 .modal-form-btn {
-  display: flex;
-  padding: 0;
+  display: block;
+  margin: auto;
   width: 200px;
   height: 50px;
   font-family: inherit;
@@ -854,9 +899,21 @@ color: var(--accent-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  background-color: var(--bg-color-hero-footer);
+  background-color: transparent;
   color: var(--bg-secondary-color);
 }
+.input-subscribe::placeholder {
+  opacity: 0;
+  font-size: 14px;
+  color: #9da4bd;
+  transition: opacity var(--time-function);
+}
+
+.input-subscribe:focus::placeholder {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
 .subscribe-btn {
   display: flex;
   padding: 0;
