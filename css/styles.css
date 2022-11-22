@@ -236,16 +236,18 @@ ul {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  opacity: 1;
   transition: opacity 250ms var(--time-function);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   pointer-events: none;
 }
 .modal {
   position: absolute;
+  padding: 40px;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -256,13 +258,16 @@ ul {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   /* transform: translate(-50%, -50%) translate(1); */
-  transition: transform 250ms var(--time-function), opacity 250ms var(--time-function);
+  /* transition: transform 250ms var(--time-function), opacity 250ms var(--time-function); */
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--time-function);
 }
 
 .backdrop.is-hidden .modal {
-  opacity: 0;
+  /* opacity: 0;
   transform: translateX(-50%) translateY(-70%);
-  transition: transform 250ms var(--time-function), opacity 250ms var(--time-function);
+  transition: transform 250ms var(--time-function), opacity 250ms var(--time-function); */
+  transform: translate(-50%, -50%) scale(1.1);
 }
 .modal-btn {
   position: absolute;
@@ -278,6 +283,7 @@ ul {
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid var(--primery-text-color);
+  transition: color 250ms var(--timing-function);
 }
 
 .modal-icon {
@@ -292,7 +298,7 @@ ul {
 .modal-label {
   display: block;
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
@@ -303,8 +309,8 @@ ul {
   color: var(--secondary-text-color);
 }
 .modal-form {
-  margin-left: 40px;
-  margin-right: 40px;
+  /* margin-left: 40px;
+  margin-right: 40px; */
 }
 .modal-form-group {
   margin-bottom: 20px;
@@ -314,7 +320,7 @@ ul {
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
   color: var(--primery-text-color);
-  margin-bottom: 4px;
+  margin: 4px;
   user-select: none;
 }
 /* .modal-form-label::placeholder {
@@ -330,23 +336,21 @@ ul {
   height: 42px;
   padding-left: 40px;
   cursor: pointer;
+  outline: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  /* outline: 1px solid transparent; */
-  /* outline-offset: -1px; */
-  transition: outline 250ms var(--time-function);
+  transition: border-color 250ms var(--time-function);
 }
 .modal-form-field:focus {
-  outline: 1px solid var(--accent-color);
-  /* box-shadow: 0 0 0 5px rgba(70, 104, 236, 0.2); */
+  border-color: var(--accent-color);
 }
+
 .modal-form-icon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-
-  transition: fill 250ms var(--time-function);
+  transition: fill 250ms var(--time-function),transform 250ms var(--time-function);
 }
 .modal-form-field:focus + .modal-form-icon {
   fill: var(--accent-color);
@@ -360,13 +364,11 @@ ul {
   letter-spacing: 0.01em;
   cursor: pointer; 
   resize: none;
+  outline: none;
   color: var(--primery-text-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: outline 250ms var(--time-function); 
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  transition: outline 250ms var(--time-function);
+  transition: border-color 250ms var(--time-function);
 }
 
 /* .modal-form-message::placeholder {
@@ -376,8 +378,7 @@ ul {
   transition: opacity var(--time-function);
 } */
 .modal-form-message:focus {
-  outline: 1px solid var(--accent-color);
-  opacity: 1;
+  border-color: var(--accent-color);
 }
 .modal-form-agreement {
   display: flex;
@@ -745,7 +746,7 @@ ul {
   height: 100%;
 
   background: rgba(33, 150, 243, 0.9);
-  border: 1px solid var(--logo-text-color);
+  /* border: 1px solid var(--logo-text-color); */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: var(--white-text-bg);
   font-size: 18px;
@@ -836,10 +837,11 @@ ul {
 }
 .footer-container {
   display: flex;
-  gap: 70px;
+  /* gap: 70px; */
   align-items: baseline;
 }
 .container-social {
+  margin-left: 70px;
   flex-basis: 206px;
 }
 
@@ -877,6 +879,7 @@ ul {
   flex-basis: 231px;
 }
 .subscribe {
+  margin-left: auto;
 }
 .container {
 }
@@ -905,12 +908,12 @@ ul {
   background-color: transparent;
   color: var(--bg-secondary-color);
 }
-.input-subscribe::placeholder {
+/* .input-subscribe::placeholder {
   opacity: 0;
   font-size: 14px;
   color: #9da4bd;
   transition: opacity var(--time-function);
-}
+} */
 
 .input-subscribe:focus::placeholder {
   opacity: 1;
